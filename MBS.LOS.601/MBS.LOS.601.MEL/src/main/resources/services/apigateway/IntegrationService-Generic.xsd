@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema
+	targetNamespace="http://nequi.co/message/integration/services/agi/"
+	elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://nequi.co/message/integration/services/agi/" xmlns:pref="http://nequi.co/message/bussines/services/getProduct">
+
+	<import schemaLocation="IS_MSG_GetProduct.xsd" namespace="http://nequi.co/message/bussines/services/getProduct"></import>
+	<element name="messageRS">
+		<complexType>
+			<sequence>
+				<element ref="tns:responseMessage"></element>
+			</sequence>
+		</complexType>
+	</element>
+
+	<element name="responseMessage" type="tns:responseMessageType"></element>
+
+	<complexType name="responseMessageType">
+		<sequence>
+			<element name="header" type="tns:responseHeaderType"
+				minOccurs="1" maxOccurs="1">
+			</element>
+			<element name="body" type="tns:responseBodyType"
+				minOccurs="1" maxOccurs="1">
+			</element>
+		</sequence>
+	</complexType>
+
+	<complexType name="requestBodyType">
+		<sequence>
+			<element ref="pref:getProductRequest"></element>
+		</sequence>
+	</complexType>
+
+
+	<complexType name="responseHeaderType">
+		<sequence>
+
+			<element name="messageID" type="string" minOccurs="1"
+				maxOccurs="1">
+			</element>
+			<element name="status" type="tns:statusType" minOccurs="1"
+				maxOccurs="1">
+			</element>
+			<element name="responseDate" type="string" minOccurs="1"
+				maxOccurs="1">
+			</element>
+			<element name="channel" type="string" minOccurs="1"
+				maxOccurs="1">
+			</element>
+		</sequence>
+	</complexType>
+
+	<complexType name="responseBodyType">
+
+		<sequence>
+			<element ref="pref:getProductResponse"></element>
+		</sequence>
+	</complexType>
+
+	<complexType name="statusType">
+		<sequence>
+			<element name="code" type="string" minOccurs="1"
+				maxOccurs="1">
+			</element>
+			<element name="description" type="string" minOccurs="1"
+				maxOccurs="1">
+			</element>
+			<element name="system" type="string" minOccurs="1"
+				maxOccurs="1">
+			</element>
+		</sequence>
+	</complexType>
+
+</schema>

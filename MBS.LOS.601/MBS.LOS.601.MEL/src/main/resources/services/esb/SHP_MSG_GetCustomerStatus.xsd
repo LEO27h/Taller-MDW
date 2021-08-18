@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema
+	targetNamespace="http://co.bancaDigital/nequi/services/UserServices/CustomerDetails/v1.0"
+	elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://co.bancaDigital/nequi/services/UserServices/CustomerDetails/v1.0">
+	<element name="GetCustomerStatusRequest" type="tns:GetCustomerStatusRequestType"></element>
+	<complexType name="GetCustomerStatusRequestType">
+		<sequence>
+			<element name="getCustomerStatusRQ" type="tns:GetCustomerStatusRQType"></element>
+		</sequence>
+	</complexType>
+	<complexType name="GetCustomerStatusRQType">
+		<sequence>
+			<element name="bankId" type="string"></element>
+			<element name="document" type="string"></element>
+			<element name="phoneNumber" type="string"></element>
+		</sequence>
+	</complexType>
+	<element name="GetCustomerStatusResponse" type="tns:GetCustomerStatusResponseType"></element>
+	<complexType name="GetCustomerStatusResponseType">
+		<sequence>
+			<element name="getCustomerStatusRS" type="tns:GetCustomerStatusRSType"></element>
+		</sequence>
+	</complexType>
+	<complexType name="GetCustomerStatusRSType">
+		<sequence>
+			<element name="cifId" type="string"></element>
+			<element name="fullName" type="string"></element>
+			<element name="preferredName" type="string"></element>
+			<element name="documentType" type="string"></element>
+			<element name="documentId" type="string"></element>
+			<element name="phoneNumber" type="string"></element>
+			<element name="emailId" type="string"></element>
+			<element name="foracId" type="string"></element>
+			<element name="acctOpnDate" type="string"></element>
+			<element name="acctStatus" type="string"></element>
+			<element name="schemeCode" type="string"></element>
+		</sequence>
+	</complexType>
+</schema>

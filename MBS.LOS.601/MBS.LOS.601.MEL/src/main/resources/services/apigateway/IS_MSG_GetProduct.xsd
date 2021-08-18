@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://nequi.co/message/bussines/services/getProduct"
+	elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://nequi.co/message/bussines/services/getProduct">
+	<element name="getProductRequest" type="tns:GetProductRequestType"></element>
+	<complexType name="GetProductRequestType">
+		<sequence>
+			<element name="productId" type="string"
+				minOccurs="1" maxOccurs="1">
+			</element>
+		</sequence>
+	</complexType>
+	<element name="getProductResponse" type="tns:GetProductResponseType"></element>
+	<complexType name="GetProductResponseType">
+		<sequence>
+			<element name="schmCode" type="string" maxOccurs="1"
+				minOccurs="0">
+			</element>
+			<element name="schmType" type="string" maxOccurs="1"
+				minOccurs="1">
+			</element>
+			<element name="branchId" type="string" maxOccurs="1"
+				minOccurs="0">
+			</element>
+			<element name="genLedgerSubHeadCode" type="string"
+				maxOccurs="1" minOccurs="0">
+			</element>
+			<element name="curCode" type="string" maxOccurs="1"
+				minOccurs="0">
+			</element>
+			<element name="currencyCode" type="string" maxOccurs="1"
+				minOccurs="1">
+			</element>
+			<element name="acctCurr" type="string" maxOccurs="1"
+				minOccurs="0">
+			</element>
+			<element name="repricingPlan" type="string" maxOccurs="1"
+				minOccurs="0">
+			</element>
+			<element name="loanPeriodMonths" type="string" maxOccurs="1"
+				minOccurs="0">
+			</element>
+			<element name="eqInstallFlg" type="string" maxOccurs="1"
+				minOccurs="0">
+			</element>
+			<element name="installFreq" type="tns:FreqType"
+				maxOccurs="1" minOccurs="0">
+			</element>
+			<element name="installmentId" type="string" maxOccurs="1"
+				minOccurs="0">
+			</element>
+			<element name="intFreq" type="tns:FreqType" maxOccurs="1"
+				minOccurs="0">
+			</element>
+			<element name="noOfInstall" type="string" maxOccurs="1"
+				minOccurs="0">
+			</element>
+			<element name="repayMethod" type="string" maxOccurs="1"
+				minOccurs="0">
+			</element>
+			<element name="loanIntTblDtlRec"
+				type="tns:LoanIntTblDtlRecType" maxOccurs="1" minOccurs="0">
+			</element>
+			<element name="deductOvduDmds" type="string" maxOccurs="1"
+				minOccurs="1">
+			</element>
+			<element name="modeOfDisb" type="string" maxOccurs="1"
+				minOccurs="1">
+			</element>
+			<element name="finalDisbFlg" type="string" maxOccurs="1"
+				minOccurs="1">
+			</element>
+			<element name="grossNetDisbt" type="string" maxOccurs="1"
+				minOccurs="1">
+			</element>
+			<element name="isDetailsEntered" type="string" maxOccurs="1"
+				minOccurs="1">
+			</element>
+			<element name="tranType" type="string" maxOccurs="1"
+				minOccurs="1">
+			</element>
+			<element name="solId" type="string" maxOccurs="1"
+				minOccurs="1">
+			</element>
+			<element name="agreement" type="string" maxOccurs="1"
+				minOccurs="0">
+			</element>
+			<element name="agreementWithInsurance" type="string"
+				maxOccurs="1" minOccurs="0">
+			</element>
+			<element name="lifeInsuranceContract" type="string"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<element name="commission" type="tns:CommissionType"
+				maxOccurs="1" minOccurs="0">
+			</element>
+			<element name="interestAE" type="tns:CommissionType"
+				maxOccurs="1" minOccurs="0">
+			</element>
+			<element name="moratoriumInterestAE"
+				type="tns:CommissionType" maxOccurs="1" minOccurs="0">
+			</element>
+			<element name="loanOtherDtls" type="tns:LoanOtherDtlsType"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<element name="instlDet" type="tns:instlDet" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<element name="maxInstallment" type="string" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<element name="minInstallment" type="string" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<element name="attributeId" type="string" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<element name="pdfAgreement" type="string" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<element name="pdfAgreementWithInsurance" type="string"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<element name="name" type="string" maxOccurs="1" minOccurs="0"></element>
+		</sequence>
+	</complexType>
+	<complexType name="LoanIntTblDtlRecType">
+		<sequence>
+			<element name="code" type="string"></element>
+			<element name="endDate" type="string"></element>
+			<element name="peggedFlg" type="string"></element>
+			<element name="startDate" type="string"></element>
+		</sequence>
+	</complexType>
+	<complexType name="FreqType">
+		<sequence>
+			<element name="cal" type="string" maxOccurs="1" minOccurs="1"></element>
+			<element name="holStat" type="string" maxOccurs="1"
+				minOccurs="1"></element>
+			<element name="startDt" type="string" maxOccurs="1"
+				minOccurs="1"></element>
+			<element name="type" type="string" maxOccurs="1" minOccurs="1"></element>
+		</sequence>
+	</complexType>
+	<complexType name="CommissionType">
+		<sequence>
+			<element name="maximum" type="double" maxOccurs="1"
+				minOccurs="1"></element>
+			<element name="percentage" type="double" maxOccurs="1"
+				minOccurs="1"></element>
+			<element name="value" type="double" maxOccurs="1" minOccurs="1"></element>
+		</sequence>
+	</complexType>
+	<complexType name="LoanOtherDtlsType">
+		<sequence>
+			<element name="acctInsuFlg" type="string" minOccurs="0"
+				maxOccurs="1"></element>
+			<element name="insuAgncyCode" type="string" minOccurs="0"
+				maxOccurs="1"></element>
+			<element name="loanPrdEndDt" type="string" minOccurs="0"
+				maxOccurs="1"></element>
+		</sequence>
+	</complexType>
+	<complexType name="instlDet">
+		<sequence>
+			<element name="installmentAmt" type="string" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<element name="maturityDate" type="string" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<element name="maxLoanAmt" type="string" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<element name="numInstallments" type="string" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<element name="totalInsuranceAmt" type="string" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<element name="totalInterestAmt" type="string" minOccurs="0"
+				maxOccurs="1">
+			</element>
+		</sequence>
+	</complexType>
+</schema>
